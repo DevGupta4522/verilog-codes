@@ -1,0 +1,116 @@
+#! /usr/local/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/local/lib/ivl/system.vpi";
+:vpi_module "/usr/local/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/local/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/local/lib/ivl/v2005_math.vpi";
+:vpi_module "/usr/local/lib/ivl/va_math.vpi";
+:vpi_module "/usr/local/lib/ivl/v2009.vpi";
+S_0x12371c0 .scope package, "$unit" "$unit" 2 1;
+ .timescale 0 0;
+S_0x1238200 .scope module, "testbench" "testbench" 3 2;
+ .timescale 0 0;
+v0x125f9d0_0 .var "a", 0 0;
+v0x125fa90_0 .var "b", 0 0;
+v0x125fb60_0 .var "c", 0 0;
+v0x125fc60_0 .net "carry", 0 0, L_0x12602e0;  1 drivers
+v0x125fd30_0 .net "sum", 0 0, L_0x125ff10;  1 drivers
+S_0x12493f0 .scope module, "uut" "full_adder" 3 7, 4 2 0, S_0x1238200;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "sum";
+    .port_info 1 /OUTPUT 1 "carry";
+    .port_info 2 /INPUT 1 "a";
+    .port_info 3 /INPUT 1 "b";
+    .port_info 4 /INPUT 1 "c";
+L_0x125fdd0 .functor XOR 1, v0x125f9d0_0, v0x125fa90_0, C4<0>, C4<0>;
+L_0x125ff10 .functor XOR 1, L_0x125fdd0, v0x125fb60_0, C4<0>, C4<0>;
+L_0x1260070 .functor AND 1, v0x125f9d0_0, v0x125fa90_0, C4<1>, C4<1>;
+L_0x12600e0 .functor XOR 1, v0x125f9d0_0, v0x125fa90_0, C4<0>, C4<0>;
+L_0x1260270 .functor AND 1, v0x125fb60_0, L_0x12600e0, C4<1>, C4<1>;
+L_0x12602e0 .functor OR 1, L_0x1260070, L_0x1260270, C4<0>, C4<0>;
+v0x1249580_0 .net *"_ivl_0", 0 0, L_0x125fdd0;  1 drivers
+v0x125f1e0_0 .net *"_ivl_4", 0 0, L_0x1260070;  1 drivers
+v0x125f2c0_0 .net *"_ivl_6", 0 0, L_0x12600e0;  1 drivers
+v0x125f3b0_0 .net *"_ivl_8", 0 0, L_0x1260270;  1 drivers
+v0x125f490_0 .net "a", 0 0, v0x125f9d0_0;  1 drivers
+v0x125f5a0_0 .net "b", 0 0, v0x125fa90_0;  1 drivers
+v0x125f660_0 .net "c", 0 0, v0x125fb60_0;  1 drivers
+v0x125f720_0 .net "carry", 0 0, L_0x12602e0;  alias, 1 drivers
+v0x125f7e0_0 .net "sum", 0 0, L_0x125ff10;  alias, 1 drivers
+    .scope S_0x1238200;
+T_0 ;
+    %delay 2, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x125f9d0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x125fa90_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x125fb60_0, 0, 1;
+    %delay 2, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x125f9d0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x125fa90_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x125fb60_0, 0, 1;
+    %delay 2, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x125f9d0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x125fa90_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x125fb60_0, 0, 1;
+    %delay 2, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x125f9d0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x125fa90_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x125fb60_0, 0, 1;
+    %delay 2, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x125f9d0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x125fa90_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x125fb60_0, 0, 1;
+    %delay 2, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x125f9d0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x125fa90_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x125fb60_0, 0, 1;
+    %delay 2, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x125f9d0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x125fa90_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x125fb60_0, 0, 1;
+    %delay 2, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x125f9d0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x125fa90_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x125fb60_0, 0, 1;
+    %delay 2, 0;
+    %vpi_call/w 3 20 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+    .scope S_0x1238200;
+T_1 ;
+    %vpi_call/w 3 24 "$dumpfile", "full_adder.vcd" {0 0 0};
+    %vpi_call/w 3 25 "$dumpvars", 32'sb00000000000000000000000000000001, S_0x1238200 {0 0 0};
+    %end;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 5;
+    "N/A";
+    "<interactive>";
+    "-";
+    "testbench.sv";
+    "design.sv";
