@@ -1,0 +1,55 @@
+$date
+	Sat Jan  4 03:53:51 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module testbench $end
+$var wire 1 ! diff $end
+$var wire 1 " borrow $end
+$var reg 1 # a $end
+$var reg 1 $ b $end
+$var reg 1 % c $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+0%
+0$
+0#
+0"
+0!
+$end
+#2
+1"
+1!
+1%
+#4
+0%
+1$
+#6
+0!
+1%
+#8
+0"
+1!
+0%
+0$
+1#
+#10
+0!
+1%
+#12
+0%
+1$
+#14
+1"
+1!
+1%
+#16

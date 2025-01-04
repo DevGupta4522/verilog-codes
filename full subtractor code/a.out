@@ -1,0 +1,119 @@
+#! /usr/local/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/local/lib/ivl/system.vpi";
+:vpi_module "/usr/local/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/local/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/local/lib/ivl/v2005_math.vpi";
+:vpi_module "/usr/local/lib/ivl/va_math.vpi";
+:vpi_module "/usr/local/lib/ivl/v2009.vpi";
+S_0x24011c0 .scope package, "$unit" "$unit" 2 1;
+ .timescale 0 0;
+S_0x2402900 .scope module, "testbench" "testbench" 3 3;
+ .timescale 0 0;
+v0x242a120_0 .var "a", 0 0;
+v0x242a1e0_0 .var "b", 0 0;
+v0x242a2b0_0 .net "borrow", 0 0, L_0x242aba0;  1 drivers
+v0x242a3b0_0 .var "c", 0 0;
+v0x242a480_0 .net "diff", 0 0, L_0x242a660;  1 drivers
+S_0x2413470 .scope module, "uut" "full_subtractor" 3 7, 4 2 0, S_0x2402900;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "diff";
+    .port_info 1 /OUTPUT 1 "borrow";
+    .port_info 2 /INPUT 1 "a";
+    .port_info 3 /INPUT 1 "b";
+    .port_info 4 /INPUT 1 "c";
+L_0x242a520 .functor XOR 1, v0x242a120_0, v0x242a1e0_0, C4<0>, C4<0>;
+L_0x242a660 .functor XOR 1, L_0x242a520, v0x242a3b0_0, C4<0>, C4<0>;
+L_0x242a7c0 .functor NOT 1, v0x242a120_0, C4<0>, C4<0>, C4<0>;
+L_0x242a830 .functor AND 1, L_0x242a7c0, v0x242a1e0_0, C4<1>, C4<1>;
+L_0x242a8f0 .functor XOR 1, v0x242a120_0, v0x242a1e0_0, C4<0>, C4<0>;
+L_0x242aa80 .functor NOT 1, L_0x242a8f0, C4<0>, C4<0>, C4<0>;
+L_0x242ab30 .functor AND 1, L_0x242aa80, v0x242a3b0_0, C4<1>, C4<1>;
+L_0x242aba0 .functor OR 1, L_0x242a830, L_0x242ab30, C4<0>, C4<0>;
+v0x2413600_0 .net *"_ivl_0", 0 0, L_0x242a520;  1 drivers
+v0x2429770_0 .net *"_ivl_10", 0 0, L_0x242aa80;  1 drivers
+v0x2429850_0 .net *"_ivl_12", 0 0, L_0x242ab30;  1 drivers
+v0x2429940_0 .net *"_ivl_4", 0 0, L_0x242a7c0;  1 drivers
+v0x2429a20_0 .net *"_ivl_6", 0 0, L_0x242a830;  1 drivers
+v0x2429b50_0 .net *"_ivl_8", 0 0, L_0x242a8f0;  1 drivers
+v0x2429c30_0 .net "a", 0 0, v0x242a120_0;  1 drivers
+v0x2429cf0_0 .net "b", 0 0, v0x242a1e0_0;  1 drivers
+v0x2429db0_0 .net "borrow", 0 0, L_0x242aba0;  alias, 1 drivers
+v0x2429f00_0 .net "c", 0 0, v0x242a3b0_0;  1 drivers
+v0x2429fc0_0 .net "diff", 0 0, L_0x242a660;  alias, 1 drivers
+    .scope S_0x2402900;
+T_0 ;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x242a120_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x242a1e0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x242a3b0_0, 0, 1;
+    %delay 2, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x242a120_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x242a1e0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x242a3b0_0, 0, 1;
+    %delay 2, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x242a120_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x242a1e0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x242a3b0_0, 0, 1;
+    %delay 2, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x242a120_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x242a1e0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x242a3b0_0, 0, 1;
+    %delay 2, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x242a120_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x242a1e0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x242a3b0_0, 0, 1;
+    %delay 2, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x242a120_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x242a1e0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x242a3b0_0, 0, 1;
+    %delay 2, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x242a120_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x242a1e0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x242a3b0_0, 0, 1;
+    %delay 2, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x242a120_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x242a1e0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x242a3b0_0, 0, 1;
+    %delay 2, 0;
+    %vpi_call/w 3 18 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+    .scope S_0x2402900;
+T_1 ;
+    %vpi_call/w 3 22 "$dumpfile", "dump.vcd" {0 0 0};
+    %vpi_call/w 3 23 "$dumpvars", 32'sb00000000000000000000000000000001, S_0x2402900 {0 0 0};
+    %end;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 5;
+    "N/A";
+    "<interactive>";
+    "-";
+    "testbench.sv";
+    "design.sv";
